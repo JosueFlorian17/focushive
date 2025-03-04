@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Aprendizaje</title>
+</head>
+<body>
+    <div id="form-container">
+        <h2 id="form-title">Formulario de Tipo de Aprendizaje</h2>
+        <form>
+            <!-- Sección 1: Atención y Distracción -->
+            <h3 class="section-title">Atención y Distracción</h3>
+            <label>Me distraigo fácilmente con ruidos o movimientos a mi alrededor:</label>
+            <input type="range" min="1" max="10" name="distraccion"><br><br>
+            
+            <label>Me cuesta terminar una tarea sin interrupciones:</label>
+            <input type="range" min="1" max="10" name="interrupciones"><br><br>
+            
+            <label>Me ayuda tener un cronómetro o temporizador al estudiar:</label>
+            <input type="radio" name="cronometro" value="si"> Sí
+            <input type="radio" name="cronometro" value="no"> No<br><br>
+            
+            <label>Prefiero estudiar en bloques cortos con descansos:</label>
+            <input type="radio" name="bloques" value="si"> Sí
+            <input type="radio" name="bloques" value="no"> No<br><br>
+            
+            <!-- Sección 2: Preferencias de Estudio -->
+            <h3 class="section-title">Preferencias de Estudio</h3>
+            <label>Aprendo mejor cuando leo y subrayo textos:</label>
+            <input type="radio" name="subrayar" value="si"> Sí
+            <input type="radio" name="subrayar" value="no"> No<br><br>
+            
+            <label>Me gusta aprender viendo videos o imágenes explicativas:</label>
+            <input type="radio" name="visual" value="si"> Sí
+            <input type="radio" name="visual" value="no"> No<br><br>
+            
+            <label>Retengo mejor la información cuando la escucho:</label>
+            <input type="radio" name="auditivo" value="si"> Sí
+            <input type="radio" name="auditivo" value="no"> No<br><br>
+            
+            <label>Necesito moverme o hacer algo físico mientras estudio:</label>
+            <input type="radio" name="kinestesico" value="si"> Sí
+            <input type="radio" name="kinestesico" value="no"> No<br><br>
+            
+            <!-- Sección 3: Memoria y Retención -->
+            <h3 class="section-title">Memoria y Retención</h3>
+            <label>Recuerdo mejor lo que he aprendido si lo explico a otra persona:</label>
+            <input type="radio" name="explicar" value="si"> Sí
+            <input type="radio" name="explicar" value="no"> No<br><br>
+            
+            <label>Necesito repetir varias veces la información para recordarla:</label>
+            <input type="range" min="1" max="10" name="repetir"><br><br>
+            
+            <label>Me ayuda imaginarme escenarios o crear historias con lo que estudio:</label>
+            <input type="radio" name="historias" value="si"> Sí
+            <input type="radio" name="historias" value="no"> No<br><br>
+            
+            <label>Si veo un esquema o gráfico, entiendo mejor la información:</label>
+            <input type="radio" name="esquema" value="si"> Sí
+            <input type="radio" name="esquema" value="no"> No<br><br>
+            
+            <!-- Sección 4: Organización y Motivación -->
+            <h3 class="section-title">Organización y Motivación</h3>
+            <label>Tengo dificultades para planificar mi estudio:</label>
+            <input type="range" min="1" max="10" name="planificacion"><br><br>
+            
+            <label>Prefiero seguir una rutina estructurada:</label>
+            <input type="radio" name="rutina" value="si"> Sí
+            <input type="radio" name="rutina" value="no"> No<br><br>
+            
+            <label>Me ayuda tener objetivos pequeños y medibles al estudiar:</label>
+            <input type="radio" name="objetivos" value="si"> Sí
+            <input type="radio" name="objetivos" value="no"> No<br><br>
+            
+            <label>Me siento más motivado si convierto el estudio en un desafío o juego:</label>
+            <input type="radio" name="gamificacion" value="si"> Sí
+            <input type="radio" name="gamificacion" value="no"> No<br><br>
+            
+            <label>Me cuesta mantenerme enfocado sin recompensas o incentivos:</label>
+            <input type="range" min="1" max="10" name="recompensas"><br><br>
+            
+            <!-- Botón de Envío -->
+            <button type="submit" id="submit-button">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

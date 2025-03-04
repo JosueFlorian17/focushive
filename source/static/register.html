@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="\source\css\styles.css">
+
+</head>
+<body>
+    <div class="container">
+    <div id="register-container" class="register-container">
+        <div class="form-container"> 
+        <div class="pfp-button-container">
+            
+            <div class="pfp-container">
+            <img src="\images\pfp.webp" class="main-profile-img" />
+            <i class="fa fa-edit"></i>
+            </div>
+            <button class="secondary-button" style="width: 50%;">Cambiar foto</button>
+        </div>
+        <form action="/register" method="POST" style="display: flex; flex-direction: column;">
+            <input type="text" name="name" placeholder="Nombre" required class="input-field">
+            <input type="text" name="lastname" placeholder="Apellido" required class="input-field">
+            <input type="email" name="email" placeholder="Correo" required class="input-field">
+            <input type="password" name="password" placeholder="Contraseña" required class="input-field">
+            <input type="password" name="confirmPassword" placeholder="Confirmar contraseña" required class="input-field">
+            <button type="submit" class="primary-button">Registrarse</button>
+        </form>
+        <div class="separator">
+            <span>O</span>
+        </div>
+        <button class="register-button" onclick="window.location.href='https://www.figma.com/design/TivGplcR5YM8ekFjqwGnVI/Emprende?node-id=0-1&p=f&t=TocVTUnYAMdNEauy-0'">Continuar con google</button>
+        <button class="register-button" onclick="window.location.href='https://www.figma.com/design/TivGplcR5YM8ekFjqwGnVI/Emprende?node-id=0-1&p=f&t=TocVTUnYAMdNEauy-0'">Continuar con facebook</button>
+        <button class="register-button" onclick="window.location.href='https://www.figma.com/design/TivGplcR5YM8ekFjqwGnVI/Emprende?node-id=0-1&p=f&t=TocVTUnYAMdNEauy-0'">Continuar con correo electrónico</button>
+        <span class="terms">Al crear una cuenta, aceptas los <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a></span>
+    </div>
+    </div>
+    <div class="big-image-container">
+        <img src="\images\stock.webp" alt="Image of a person studying" class="big-image">
+    </div>
+</div>
+</body>
+</html>
