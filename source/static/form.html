@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Aprendizaje</title>
+    <link rel="stylesheet" href="\source\css\styles.css">
+
+    <script>
+        function analizarResultados() {
+            let atencionDistraccion = parseInt(document.querySelector('[name="distraccion"]').value) || 0;
+            atencionDistraccion += parseInt(document.querySelector('[name="interrupciones"]').value) || 0;
+
+            let preferenciaVisual = document.querySelector('[name="visual"]:checked')?.value === "si" ? 10 : 0;
+            preferenciaVisual += document.querySelector('[name="esquema"]:checked')?.value === "si" ? 10 : 0;
+
+            let preferenciaAuditiva = document.querySelector('[name="auditivo"]:checked')?.value === "si" ? 10 : 0;
+            preferenciaAuditiva += document.querySelector('[name="explicar"]:checked')?.value === "si" ? 10 : 0;
+
+            let preferenciaKinestesica = document.querySelector('[name="kinestesico"]:checked')?.value === "si" ? 10 : 0;
+            
+            let memoriaRetencion = parseInt(document.querySelector('[name="repetir"]').value) || 0;
+
+            let resultado = "Stopwatch y Técnica de Tareas en Bloques";
+            if (atencionDistraccion > 15) {
+                resultado = "Pomodoro (tiempo regulable)";
+            } else if (preferenciaVisual > preferenciaAuditiva && preferenciaVisual > preferenciaKinestesica) {
+                resultado = "Creación de flashcards y Mapas Mentales";
+            } else if (preferenciaAuditiva > preferenciaVisual && preferenciaAuditiva > preferenciaKinestesica) {
+                resultado = "Narración de textos y Podcasts";
+            } else if (preferenciaKinestesica > preferenciaVisual && preferenciaKinestesica > preferenciaAuditiva) {
+                resultado = "Pomodoro con requisitos de movimiento y Role-playing";
+            } else if (memoriaRetencion > 7) {
+                resultado = "Pomodoro con preguntas al final y Repetición Activa";
+            }
+
+            // Display the modal with the result
+            document.getElementById("resultado-text").innerText = "Tu tipo de estudio es: " + resultado;
+            document.getElementById("resultado-modal").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function cerrarModal() {
+            document.getElementById("resultado-modal").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div style="max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+        <h2>Formulario de Tipo de Aprendizaje</h2>
+        <form onsubmit="event.preventDefault(); analizarResultados();">
+            
+            <fieldset>
+                <legend><h3>Atención y Distracción</h3></legend>
+                <label for="distraccion">Me distraigo fácilmente con ruidos o movimientos a mi alrededor:</label>
+                <input type="range" id="distraccion" min="1" max="10" name="distraccion" style="width: 100%;">
+
+                <label for="interrupciones">Me cuesta terminar una tarea sin interrupciones:</label>
+                <input type="range" id="interrupciones" min="1" max="10" name="interrupciones" style="width: 100%;">
+            </fieldset>
+
+            <fieldset>
+                <legend><h3>Preferencias de Estudio</h3></legend>
+                <label>Me gusta aprender viendo videos o imágenes explicativas:</label>
+                <input type="radio" name="visual" value="si"> Sí
+                <input type="radio" name="visual" value="no"> No
+                
+                <label>Retengo mejor la información cuando la escucho:</label>
+                <input type="radio" name="auditivo" value="si"> Sí
+                <input type="radio" name="auditivo" value="no"> No
+                
+                <label>Necesito moverme o hacer algo físico mientras estudio:</label>
+                <input type="radio" name="kinestesico" value="si"> Sí
+                <input type="radio" name="kinestesico" value="no"> No
+                
+                <label>Si veo un esquema o gráfico, entiendo mejor la información:</label>
+                <input type="radio" name="esquema" value="si"> Sí
+                <input type="radio" name="esquema" value="no"> No
+                
+                <label>Recuerdo mejor lo que he aprendido si lo explico a otra persona:</label>
+                <input type="radio" name="explicar" value="si"> Sí
+                <input type="radio" name="explicar" value="no"> No
+            </fieldset>
+
+            <fieldset>
+                <legend><h3>Memoria y Retención</h3></legend>
+                <label for="repetir">Necesito repetir varias veces la información para recordarla:</label>
+                <input type="range" id="repetir" min="1" max="10" name="repetir" style="width: 100%;">
+            </fieldset>
+
+            <div class="button-container">
+                <button type="submit" class="primary-button">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Pop-up Modal -->
+    <div id="overlay" class="modal-overlay"></div>
+    <div id="resultado-modal" class="modal">
+        <h3 id="resultado-text"></h3>
+        <button class="close-btn" onclick="cerrarModal()">Cerrar</button>
+    </div>
+</body>
+</html>
