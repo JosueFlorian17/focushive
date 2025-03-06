@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Estudio</title>
+    <style>
+        /* Estilos Globales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Secciones */
+        .section {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .blue { background: #E3F2FD; }
+        .green { background: #C8E6C9; }
+        .yellow { background: #FFECB3; }
+
+        /* Botón */
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #FB8C00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #E65100;
+        }
+
+        /* Texto */
+        .title {
+            color: #1E88E5;
+        }
+
+        .subtitle {
+            color: #666;
+        }
+
+        .progress-text {
+            color: #1E88E5;
+        }
+
+        .motivation-text {
+            color: #2E7D32;
+        }
+
+        .community-text {
+            color: #888;
+            margin-top: 20px;
+        }
+
+        /* Gráfica (Emojis) */
+        .progress-graph {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        /* Responsividad Móvil */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 80%;
+                padding: 20px;
+            }
+            .button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Título -->
+        <h1 class="title">📊 Seguimiento Semanal de Estudio</h1>
+        <p class="subtitle">Analiza tu progreso, mantén la motivación y ajusta tu planificación.</p>
+
+        <!-- Resumen General -->
+        <div class="section blue">
+            <h2>📅 Resumen de la Semana</h2>
+            <p><strong>Horas Totales de Estudio:</strong> 14h 30m</p>
+            <p><strong>Meta Semanal:</strong> 15h (🚀 ¡Casi lo logras!)</p>
+            <p class="progress-text"><em>“Cada semana es una nueva oportunidad para crecer. ¡Sigue adelante!”</em></p>
+        </div>
+
+        <!-- Gráfica (Simulada con emojis) -->
+        <div class="progress-graph">
+            <h3>📈 Tu Progreso Diario</h3>
+            <p>🟦 🟦 🟦 🟦 🟦 🟦 🟦 (Lunes - 3h)</p>
+            <p>🟦 🟦 🟦 🟦 🟦 🟦 (Martes - 2.5h)</p>
+            <p>🟦 🟦 🟦 🟦 🟦 (Miércoles - 2h)</p>
+            <p>🟦 🟦 🟦 (Jueves - 1.5h)</p>
+            <p>🟦 🟦 🟦 🟦 🟦 🟦 (Viernes - 2.5h)</p>
+            <p>🟦 🟦 🟦 🟦 (Sábado - 2h)</p>
+            <p>🟦 (Domingo - 0.5h)</p>
+        </div>
+
+        <!-- Recompensas y Motivación -->
+        <div class="section green">
+            <h2>🏆 Logros de la Semana</h2>
+            <p>✔️ <strong>Constancia de Oro</strong>: Estudiaste 5 días esta semana 🎉</p>
+            <p>✔️ <strong>Modo Enfoque</strong>: Sesión más larga: 3 horas seguidas! ⏳</p>
+            <p class="motivation-text"><em>"El progreso es progreso, sin importar la velocidad. 💪"</em></p>
+        </div>
+
+        <!-- Planificación para la Próxima Semana -->
+        <div class="section yellow">
+            <h2>🎯 Planifica tu Próxima Semana</h2>
+            <p><strong>¿Quieres ajustar tu meta?</strong></p>
+            <button class="button">Modificar Meta</button>
+        </div>
+
+        <!-- Comunidad -->
+        <p class="community-text">🌍 <strong>+40,872 estudiantes</strong> también estudiaron esta semana. ¡Eres parte de algo más grande! 🚀</p>
+
+    </div>
+
+</body>
+</html>

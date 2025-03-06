@@ -36,7 +36,7 @@ body {
     cursor: pointer;
     font-size: 16px;
 }
-/* 🔹 Image Container (Maintains Absolute on Desktop) */
+
 .image-container {
     position: absolute;
     width: 15%;
@@ -52,7 +52,6 @@ body {
     border-radius: 10px;
 }
 
-/* 🔹 Card (Maintains Absolute on Desktop) */
 .card {
     background: #ddd;
     padding: 20px;
@@ -88,7 +87,6 @@ body {
     font-size: 1rem;
 }
 
-/* 🔹 Motivational Section (Maintains Absolute Position) */
 .motivational {
     position: absolute;
     top: 20px;
@@ -104,7 +102,6 @@ body {
     font-size: 12px;
 }
 
-/* 🔹 Playlists Section */
 .playlists {
     position: absolute;
     bottom: 20px;
@@ -120,7 +117,6 @@ body {
     font-size: 100%;
 }
 
-/* 🔹 Responsive: Apply Column Layout ONLY on Mobile */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -131,40 +127,43 @@ body {
         padding: 20px;
     }
 
-    /* Image moves below card */
     .image-container {
-        position: relative; /* Remove absolute positioning */
+        position: relative; 
         width: 100%;
-        max-width: 400px;
-        height: auto;
+        max-width: 200px;
+        height: 200px;
         text-align: center;
+        right: 0vw;
+        left: 0vw;
+        margin-top: 10vh;
     }
 
     .image-container img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
     }
 
-    /* Card now follows flexbox */
     .card {
-        position: relative; /* Remove absolute positioning */
+        position: relative;
         width: 100%;
         max-width: 400px;
         height: auto;
         padding: 20px;
+        text-align: center;
+        right: 0vw;
+        left: 0vw;
     }
 
-    /* Motivational & Playlists Adjust */
     .motivational,
     .playlists {
-        position: relative; /* Remove absolute positioning */
+        position: relative;
         width: 100%;
         max-width: 400px;
         text-align: center;
         margin-top: 10px;
     }
 
-    /* Buttons stay readable */
     .button {
         font-size: 1.2rem;
     }
