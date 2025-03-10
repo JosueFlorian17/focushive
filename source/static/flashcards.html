@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .topic-group {
+            margin-bottom: 20px;
+        }
+        .topic-header {
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .flashcards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .flashcard {
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: block;
+        }
+        .flashcard:hover {
+            transform: scale(1.05);
+        }
+        .flashcard .question,
+        .flashcard .answer {
+            display: none;
+        }
+        .flashcard.active .question {
+            display: block;
+        }
+        .flashcard.active .answer {
+            display: block;
+            margin-top: 10px;
+            background: #fff;
+            color: #000;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        .form-container input,
+        .form-container select {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background: #0056b3;
+        }
+        .general {
+            background: #007bff;
+            color: #fff;
+        }
+        .science {
+            background: #28a745;
+            color: #fff;
+        }
+        .history {
+            background: #ffc107;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <input type="text" id="question" placeholder="Pregunta">
+        <input type="text" id="answer" placeholder="Respuesta">
+        <select id="topic">
+            <option value="general">General</option>
+            <option value="science">Ciencia</option>
+            <option value="history">Historia</option>
+        </select>
+        <button onclick="addFlashcard()">Añadir Flashcard</button>
+    </div>
+    <div class="container" id="flashcards-container"></div>
+    </div>
+
+    <script>
+        function toggleFlashcard(element) {
+            element.classList.toggle('active');
+        }
+
+        function toggleTopicGroup(element) {
+            const flashcardsContainer = element.nextElementSibling;
+            const icon = element.querySelector('.toggle-icon');
+            let isOpen = element.getAttribute('data-open') === 'true';
+            if (isOpen) {
+                flashcardsContainer.style.display = 'none';
+                icon.textContent = '▲';
+                element.setAttribute('data-open', 'false');
+                const flashcards = flashcardsContainer.querySelectorAll('.flashcard');
+                flashcards.forEach(flashcard => flashcard.classList.remove('active'));
+            } else {
+                flashcardsContainer.style.display = 'grid';
+                icon.textContent = '▼';
+                element.setAttribute('data-open', 'true');
+            }
+        }
+
+        function addFlashcard() {
+            const question = document.getElementById('question').value;
+            const answer = document.getElementById('answer').value;
+            const topic = document.getElementById('topic').value;
+
+            if (question && answer) {
+                let topicGroup = document.getElementById(`group-${topic}`);
+                if (!topicGroup) {
+                    topicGroup = document.createElement('div');
+                    topicGroup.className = 'topic-group';
+                    topicGroup.id = `group-${topic}`;
+                    topicGroup.innerHTML = `
+                        <div class="topic-header" onclick="toggleTopicGroup(this)" data-open="true">
+                            ${topic.charAt(0).toUpperCase() + topic.slice(1)}
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="flashcards" style="display: grid;"></div>
+                    `;
+                    document.getElementById('flashcards-container').appendChild(topicGroup);
+                }
+
+                const flashcard = document.createElement('div');
+                flashcard.className = `flashcard ${topic}`;
+                flashcard.setAttribute('onclick', 'toggleFlashcard(this)');
+                flashcard.innerHTML = `
+                    <div class="question">${question}</div>
+                    <div class="answer">${answer}</div>
+                `;
+
+                topicGroup.querySelector('.flashcards').appendChild(flashcard);
+                flashcard.style.display = 'block';
+
+                document.getElementById('question').value = '';
+                document.getElementById('answer').value = '';
+                document.getElementById('topic').value = 'general';
+            } else {
+                alert('Por favor, completa todos los campos.');
+            }
+        }
+    </script>
+</body>
+</html>

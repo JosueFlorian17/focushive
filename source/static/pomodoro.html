@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #6a0dad; /* Morado */
+            color: #ffd700; /* Amarillo */
+            transition: background-color 0.5s, color 0.5s;
+            flex-direction: column;
+        }
+        .timer {
+            text-align: center;
+        }
+        .time {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #ffd700; /* Amarillo */
+            color: #6a0dad; /* Morado */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .buttons button:hover {
+            opacity: 0.8;
+        }
+        .buttons button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer"></div>
+        <div class="time" id="time">25:00</div>
+        <div class="buttons">
+            <button id="startButton" onclick="startTimer()">Comenzar</button>
+            <button id="stopButton" onclick="stopTimer()">Detener</button>
+            <button id="resetButton" onclick="resetTimer()">Reiniciar</button>
+            <button onclick="skipBreak()">Saltar Descanso</button>
+            <button onclick="skipWork()">Saltar Trabajo</button>
+        </div>
+    </div>
+
+    <script>
+        let timer;
+        let workMinutes = 25;
+        let breakMinutes = 5;
+        let minutes = workMinutes;
+        let seconds = 0;
+        let isRunning = false;
+        let onBreak = false;
+        let colorsInverted = false;
+
+        function updateDisplay() {
+            document.getElementById('time').textContent = 
+                `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+        function startTimer() {
+            if (!isRunning) {
+                isRunning = true;
+                if (!onBreak) {
+                    invertColors();
+                } else {
+                    setZenColors();
+                }
+
+                timer = setInterval(() => {
+                    if (seconds === 0) {
+                        if (minutes === 0) {
+                            clearInterval(timer);
+                            isRunning = false;
+                            if (onBreak) {
+                                onBreak = false;
+                                minutes = workMinutes;
+                                alert("¡Descanso terminado! Vuelve al trabajo.");
+                                invertColors();
+                            } else {
+                                onBreak = true;
+                                minutes = breakMinutes;
+                                alert("¡Tiempo terminado! Toma un descanso.");
+                                setZenColors();
+                            }
+                            startTimer();
+                        } else {
+                            minutes--;
+                            seconds = 59;
+                        }
+                    } else {
+                        seconds--;
+                    }
+                    updateDisplay();
+                }, 1000);
+            }
+        }
+
+
+        function stopTimer() {
+            if (isRunning && !onBreak) {
+                invertColors();
+                clearInterval(timer);
+                isRunning = false;
+            }
+        }
+
+        function resetTimer() {
+            if (!onBreak) {
+                clearInterval(timer);
+                isRunning = false;
+                onBreak = false;
+                minutes = workMinutes;
+                seconds = 0;
+                updateDisplay();
+            }
+        }
+
+        function skipBreak() {
+            if (onBreak) {
+                clearInterval(timer);
+                isRunning = false;
+                onBreak = false;
+                minutes = workMinutes;
+                seconds = 0;
+                updateDisplay();
+                invertColors();
+                startTimer();
+            }
+        }
+
+        function skipWork() {
+            if (!onBreak) {
+                clearInterval(timer);
+                isRunning = false;
+                onBreak = true;
+                minutes = breakMinutes;
+                seconds = 0;
+                updateDisplay();
+                setTimeout(setZenColors, 100); // Asegura que los colores se apliquen correctamente
+                startTimer();
+            }
+        }
+
+        function invertColors() {
+            if (!colorsInverted) {
+                document.body.style.backgroundColor = '#ffd700'; // Amarillo
+                document.body.style.color = '#6a0dad'; // Morado
+                document.querySelectorAll('.buttons button').forEach(button => {
+                    button.style.backgroundColor = '#6a0dad'; // Morado
+                    button.style.color = '#ffd700'; // Amarillo
+                });
+            } else {
+                document.body.style.backgroundColor = '#6a0dad'; // Morado
+                document.body.style.color = '#ffd700'; // Amarillo
+                document.querySelectorAll('.buttons button').forEach(button => {
+                    button.style.backgroundColor = '#ffd700'; // Amarillo
+                    button.style.color = '#6a0dad'; // Morado
+                });
+            }
+            colorsInverted = !colorsInverted;
+        }
+
+        function setZenColors() {
+            document.body.style.backgroundColor = '#2e8b57'; // Verde oscuro
+            document.body.style.color = '#ffffff'; // Blanco
+            document.querySelectorAll('.buttons button').forEach(button => {
+                button.style.backgroundColor = '#ffffff'; // Blanco
+                button.style.color = '#2e8b57'; // Verde oscuro
+            });
+        }
+
+        updateDisplay();
+    </script>
+
+</body>
+</html>

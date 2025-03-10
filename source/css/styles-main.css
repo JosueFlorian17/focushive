@@ -130,12 +130,16 @@ body {
     .image-container {
         position: relative; 
         width: 100%;
-        max-width: 200px;
-        height: 200px;
+        max-width: 100px;
+        height: 100px;
         text-align: center;
         right: 0vw;
         left: 0vw;
         margin-top: 10vh;
+        display: flex;
+        align-items: center;
+        margin-top: -10%;
+        gap: 20px;
     }
 
     .image-container img {
@@ -161,11 +165,19 @@ body {
         width: 100%;
         max-width: 400px;
         text-align: center;
-        margin-top: 10px;
+        margin-left: 12%;
+    }
+
+    .playlists{
+        margin-top: 40px;
     }
 
     .button {
         font-size: 1.2rem;
+    }
+    .close-btn {
+        width: 20px;
+        height: 20px;
     }
 }
 

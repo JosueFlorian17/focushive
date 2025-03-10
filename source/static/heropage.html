@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        /* Estilos de la barra superior */
+        .top-bar {
+            background-color: #d3d3d3;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .top-bar .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin-right: 10px;
+        }
+
+        .top-bar .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-bar .nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .top-bar .contact {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Estilos de la sección principal */
+        .main-content {
+            text-align: center;
+            margin: 80px auto;
+            max-width: 800px;
+            display: flex;
+        }
+
+        .main-content h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .buttons .primary {
+            background-color: #bdbdbd;
+            color: black;
+        }
+
+        .buttons .secondary {
+            background-color: #e0e0e0;
+            color: black;
+        }
+
+        /* Estilos del footer */
+        .footer {
+            background-color: #d3d3d3;
+            padding: 15px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer .social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer .social img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Icono de WhatsApp */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #d3d3d3;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <div class="top-bar">
+        <div class="logo">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: #fff;"></div>
+            <span>Project Name</span>
+        </div>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">About us</a>
+        </div>
+        <div class="contact">
+            <span>📞 +51 904 376 308</span>
+        </div>
+    </div>
+
+    <!-- Sección principal -->
+    <div class="main-content">
+        <h1>Enfócate. Aprende. Domina.</h1>
+        <p>La única app que personaliza tu método de estudio y te motiva en comunidad</p>
+        
+        <div class="buttons">
+            <button class="primary">aquí k va</button>
+            <button class="secondary">Descubrir mi tipo de estudio</button>
+        </div>
+
+        <div class="circle"></div>
+    </div>
+
+    <!-- Pie de página -->
+    <div class="footer">
+        <div class="social">
+            <img src="instagram.png" alt="Instagram">
+            <img src="facebook.png" alt="Facebook">
+            <img src="tiktok.png" alt="TikTok">
+            <img src="gmail.png" alt="Gmail">
+        </div>
+        <p>Copyright © 2025 Derechos reservados | Desarrollado por nombre de la empresa</p>
+    </div>
+
+    <!-- Icono de WhatsApp -->
+    <div class="whatsapp">
+        <img src="whatsapp.png" alt="WhatsApp" width="30">
+    </div>
+
+</body>
+</html>

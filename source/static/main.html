@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseño de Figma</title>
-    <link rel="stylesheet" href="\source\css\stoles.css">
+    <link rel="stylesheet" href="\source\css\styles-main.css">
 </head>
 <body>
 
@@ -17,6 +17,7 @@
 
         <div class="card">
             <div class="card-content">
+                <!-- Aqui pondremos las diferentes actividades -->               
                 <img src="\images\clock.svg" style="height: 100%;">
             </div>
             <button class="button">Botón 1</button>
@@ -31,12 +32,23 @@
             <p>Este espacio es para frases motivadoras</p>
         </div>
         <div class="playlists">
-            <button class="close-btn">&times;</button>
-            <p>Aquí guardaremos links de playlists</p>
-            <p>Aquí guardaremos links de playlists</p>
+            <iframe id="youtube-video" width="560" height="315"
+                src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1&si=HX7KOVn10MnfXE_g"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+
         </div>
     </div>
 
     <script src="\source\scripts\scripts.js"></script>
+    <script>
+        document.addEventListener("click", function () {
+            let iframe = document.getElementById("youtube-video");
+            let src = iframe.src.replace("mute=1", "mute=0"); // Quita mute
+            iframe.src = src;
+        }, { once: true }); // Solo se ejecuta la primera vez que se haga clic
+    </script>
 </body>
 </html>
