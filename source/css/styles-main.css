@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Estilos Generales */
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +8,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+    background-color: #FAF0E6; /* Beige Más Claro */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,6 +18,7 @@ body {
     flex-direction: column;
 }
 
+/* Contenedor Principal */
 .container {
     display: flex;
     align-items: center;
@@ -24,11 +28,12 @@ body {
     width: 100vw;
 }
 
+/* Botón de Cerrar */
 .close-btn {
     position: absolute;
     top: -10px;
     right: -10px;
-    background: #ccc;
+    background: #D9D9D9; /* Gris Suave */
     width: 1.5vw;
     height: 3vh;
     border: none;
@@ -37,27 +42,35 @@ body {
     font-size: 16px;
 }
 
+
 .image-container {
     position: absolute;
     width: 15%;
     height: 30%;
     border-radius: 10px;
     left: 50px;
+    background: #E3C7A1; /* Beige Claro */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .image-container img {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
 
+/* Tarjeta (Card) */
 .card {
-    background: #ddd;
+    background: #5B6D60; /* Verde Apagado */
     padding: 20px;
     border-radius: 10px;
     width: 20%;
     height: 60%;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,7 +80,7 @@ body {
 }
 
 .card-content {
-    background: gray;
+    background: #A66A4D; /* Terracota Suave */
     width: 100%;
     height: 60%;
     display: flex;
@@ -77,36 +90,52 @@ body {
     padding: 20px;
 }
 
+.card-content img {
+    width: 50%;
+    height: 50%;
+    border-radius: 5px;
+}
+
+/* Botones */
 .button {
     width: 100%;
     padding: 12px;
     border: none;
-    background: #bbb;
-    border-radius: 5px;
+    background: #A66A4D; /* Terracota Suave */
+    color: white;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background 0.3s;
 }
 
+.button:hover {
+    background: #8B5442; /* Terracota Oscuro */
+}
+
+/* Motivational */
 .motivational {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: white;
+    background: #FFF;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     width: 20%;
+    color: #2F1E1E; /* Marrón Oscuro */
 }
 
 .motivational p {
-    font-size: 12px;
+    font-size: 14px;
 }
 
+/* Playlists */
 .playlists {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    background: gray;
+    background: #5B6D60; /* Verde Apagado */
     padding: 10px;
     border-radius: 5px;
     width: 20%;
@@ -117,10 +146,17 @@ body {
     font-size: 100%;
 }
 
+/* Diseño Responsivo */
 @media (max-width: 768px) {
+    body {
+        justify-content: center;
+        align-items: center;
+    }
+
     .container {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         height: auto;
         width: 90%;
         max-width: 600px;
@@ -130,22 +166,25 @@ body {
     .image-container {
         position: relative; 
         width: 100%;
-        max-width: 100px;
-        height: 100px;
+        max-width: 200px;
+        height: 200px;
         text-align: center;
         right: 0vw;
         left: 0vw;
         margin-top: 10vh;
         display: flex;
         align-items: center;
-        margin-top: -10%;
         gap: 20px;
     }
-
     .image-container img {
-        width: 100%;
-        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
         object-fit: cover;
+        border-radius: 10px;
+    }
+    .image-container span{
+        font-size: 0.8rem;
+        width: 300%;
     }
 
     .card {
@@ -156,7 +195,6 @@ body {
         padding: 20px;
         text-align: center;
         right: 0vw;
-        left: 0vw;
     }
 
     .motivational,
@@ -168,13 +206,14 @@ body {
         margin-left: 12%;
     }
 
-    .playlists{
+    .playlists {
         margin-top: 40px;
     }
 
     .button {
         font-size: 1.2rem;
     }
+
     .close-btn {
         width: 20px;
         height: 20px;
