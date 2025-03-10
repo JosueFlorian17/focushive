@@ -55,7 +55,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 90%;
+    height: 95%;
     background-color: #5B6D60; /* Verde Apagado */
     padding: 5%;
     border-radius: 20px;
@@ -66,7 +66,7 @@ body {
 .input-field {
     padding: 12px;
     background-color: #FAF0E6; /* Beige Más Claro */
-    border: 1px solid #D9D9D9; /* Gris Suave */
+    border: 2px solid #A66A4D;
     border-radius: 5px;
     font-size: 14px;
     margin-top: 10px;
@@ -208,5 +208,9 @@ body {
     .register-container {
         width: 100%;
         box-shadow: none;
+    }
+
+    .form-container{
+        height: 9%;
     }
 }

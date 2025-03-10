@@ -7,6 +7,36 @@
     box-sizing: border-box;
 }
 
+/* Barra Superior */
+.top-bar {
+    width: 100%;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    background: #5B6D60; /* Verde apagado */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    color: white;
+}
+
+.project-name {
+    font-size: clamp(1.2em, 1.8vw, 2em);
+    font-family: 'Playfair Display', serif;
+    color: white;
+    margin-left: 1vw;
+}
+
+/* Menú */
+.menu-item, .contact {
+    font-size: clamp(1em, 1.5vw, 1.2em);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    margin: 0 2vw;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #FAF0E6; /* Beige Más Claro */
@@ -80,7 +110,7 @@ body {
 }
 
 .card-content {
-    background: #A66A4D; /* Terracota Suave */
+    background: #ffffff; /* Terracota Suave */
     width: 100%;
     height: 60%;
     display: flex;
@@ -101,7 +131,7 @@ body {
     width: 100%;
     padding: 12px;
     border: none;
-    background: #A66A4D; /* Terracota Suave */
+    background: #969696; /* Terracota Suave */
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -116,7 +146,7 @@ body {
 /* Motivational */
 .motivational {
     position: absolute;
-    top: 20px;
+    top: 10%;
     right: 20px;
     background: #FFF;
     padding: 10px;
@@ -133,7 +163,7 @@ body {
 /* Playlists */
 .playlists {
     position: absolute;
-    bottom: 20px;
+    bottom: 10%;
     right: 20px;
     background: #5B6D60; /* Verde Apagado */
     padding: 10px;
@@ -145,7 +175,24 @@ body {
     color: white;
     font-size: 100%;
 }
+.bottom-bar {
+    width: 100%;
+    height: 8vh;
+    position: fixed;
+    bottom: 0;
+    background: #2F1E1E; /* Marrón oscuro para cohesión */
+    display: flex;
+    align-items: center;
+    padding: 1vh;
+    justify-content: space-around;
+    color: white;
+}
 
+/* Iconos Sociales */
+.icon {
+    width: 3vw;
+    height: 3vw;
+}
 /* Diseño Responsivo */
 @media (max-width: 768px) {
     body {
@@ -206,10 +253,6 @@ body {
         margin-left: 12%;
     }
 
-    .playlists {
-        margin-top: 40px;
-    }
-
     .button {
         font-size: 1.2rem;
     }
@@ -218,6 +261,12 @@ body {
         width: 20px;
         height: 20px;
     }
+    .top-bar{ 
+        height: 3%;
+    }
+
+    .bottom-bar {
+        height: 5%;
 }
 
 @media (min-width: 1024px) {
@@ -225,4 +274,5 @@ body {
         font-size: 1.4rem;
         padding: 14px;
     }
+}
 }
