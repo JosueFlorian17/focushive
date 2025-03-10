@@ -188,10 +188,14 @@ body {
     color: white;
 }
 
+.social-icons{
+    display: flex;
+    gap: 10px;
+}
 /* Iconos Sociales */
 .icon {
-    width: 3vw;
-    height: 3vw;
+    width: 1vw;
+    height: 1vw;
 }
 /* Diseño Responsivo */
 @media (max-width: 768px) {
@@ -267,6 +271,23 @@ body {
 
     .bottom-bar {
         height: 5%;
+    }
+
+    .social-icons{
+        display: flex;
+        gap: 1px;  
+    }
+
+    .icon{
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .contact-text,
+    .prices,
+    .footer-text{
+        font-size: 0.4rem;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -275,4 +296,4 @@ body {
         padding: 14px;
     }
 }
-}
+
