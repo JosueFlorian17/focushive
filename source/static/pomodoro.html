@@ -11,8 +11,8 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #6a0dad; /* Morado */
-            color: #ffd700; /* Amarillo */
+            background-color: #faf0e6; /* Morado */
+            color: #2f1e1e; /* Amarillo */
             transition: background-color 0.5s, color 0.5s;
             flex-direction: column;
         }
@@ -27,11 +27,13 @@
             font-size: 16px;
             padding: 10px 20px;
             margin: 5px;
-            background-color: #ffd700; /* Amarillo */
-            color: #6a0dad; /* Morado */
+            background-color: #e3c7a1; /* Amarillo */
+            color: #2f1e1e; /* Morado */
             border: none;
             cursor: pointer;
             transition: background-color 0.5s, color 0.5s;
+            font-weight: bold;
+            border-radius: 10px;
         }
         .buttons button:hover {
             opacity: 0.8;
@@ -154,29 +156,29 @@
 
         function invertColors() {
             if (!colorsInverted) {
-                document.body.style.backgroundColor = '#ffd700'; // Amarillo
-                document.body.style.color = '#6a0dad'; // Morado
+                document.body.style.backgroundColor = '#e8cfaf'; // Amarillo
+                document.body.style.color = '#faf0e6'; // Morado
                 document.querySelectorAll('.buttons button').forEach(button => {
-                    button.style.backgroundColor = '#6a0dad'; // Morado
-                    button.style.color = '#ffd700'; // Amarillo
+                    button.style.backgroundColor = '#584846'; // Morado
+                    button.style.color = '#faf0e6'; // Amarillo
                 });
             } else {
-                document.body.style.backgroundColor = '#6a0dad'; // Morado
-                document.body.style.color = '#ffd700'; // Amarillo
+                document.body.style.backgroundColor = '#faf0e6'; // Morado
+                document.body.style.color = '#584846'; // Amarillo
                 document.querySelectorAll('.buttons button').forEach(button => {
-                    button.style.backgroundColor = '#ffd700'; // Amarillo
-                    button.style.color = '#6a0dad'; // Morado
+                    button.style.backgroundColor = '#e3c7a1'; // Amarillo
+                    button.style.color = '#2f1e1e'; // Morado
                 });
             }
             colorsInverted = !colorsInverted;
         }
 
         function setZenColors() {
-            document.body.style.backgroundColor = '#2e8b57'; // Verde oscuro
+            document.body.style.backgroundColor = '#5b6d60'; // Verde oscuro
             document.body.style.color = '#ffffff'; // Blanco
             document.querySelectorAll('.buttons button').forEach(button => {
                 button.style.backgroundColor = '#ffffff'; // Blanco
-                button.style.color = '#2e8b57'; // Verde oscuro
+                button.style.color = '#5b6d60'; // Verde oscuro
             });
         }
 
