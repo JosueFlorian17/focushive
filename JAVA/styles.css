@@ -22,12 +22,25 @@ body {
     padding: 0 5vw;
     color: white;
 }
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    margin-left: -20px;
+    padding: 10px;
+}
+.logo-circle{
+    width: 30%;
+}
+
 
 .project-name {
     font-size: clamp(1.2em, 1.8vw, 2em);
     font-family: 'Playfair Display', serif;
     color: white;
     margin-left: 1vw;
+    min-width: 70%;
 }
 
 /* Menú */
@@ -122,10 +135,14 @@ body {
     color: white;
 }
 
+.social-icons{
+    display: flex;
+    gap: 10px;
+}
 /* Iconos Sociales */
 .icon {
-    width: 3vw;
-    height: 3vw;
+    width: 1vw;
+    height: 1vw;
 }
 
 /* 📱 RESPONSIVE DESIGN */
@@ -144,6 +161,32 @@ body {
     .image-circle {
         width: 50vw;
         height: 50vw;
+    }
+    .bottom-bar {
+        height: 5%;
+    }
+
+    .social-icons{
+        display: flex;
+        gap: 1px;  
+    }
+
+    .icon{
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .contact-text,
+    .prices,
+    .footer-text{
+        font-size: 0.4rem;
+    }
+    .button-container
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 1vh;
+        justify-content: center;
     }
 }
 

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="\source\css\styles.css">
 
     <script>
+        let paginaDestino = ""; // Variable global para la página de redirección
+
         function analizarResultados() {
             let atencionDistraccion = parseInt(document.querySelector('[name="distraccion"]').value) || 0;
             atencionDistraccion += parseInt(document.querySelector('[name="interrupciones"]').value) || 0;
@@ -22,19 +24,26 @@
             let memoriaRetencion = parseInt(document.querySelector('[name="repetir"]').value) || 0;
 
             let resultado = "Stopwatch y Técnica de Tareas en Bloques";
+            paginaDestino = "main.html";
+
             if (atencionDistraccion > 15) {
                 resultado = "Pomodoro (tiempo regulable)";
+                paginaDestino = "pomodoro.html";
             } else if (preferenciaVisual > preferenciaAuditiva && preferenciaVisual > preferenciaKinestesica) {
                 resultado = "Creación de flashcards y Mapas Mentales";
+                paginaDestino = "flashcards.html";
             } else if (preferenciaAuditiva > preferenciaVisual && preferenciaAuditiva > preferenciaKinestesica) {
                 resultado = "Narración de textos y Podcasts";
+                paginaDestino = "soon.html";
             } else if (preferenciaKinestesica > preferenciaVisual && preferenciaKinestesica > preferenciaAuditiva) {
                 resultado = "Pomodoro con requisitos de movimiento y Role-playing";
+                paginaDestino = "soon.html";
             } else if (memoriaRetencion > 7) {
                 resultado = "Pomodoro con preguntas al final y Repetición Activa";
+                paginaDestino = "soon.html";
             }
 
-            // Display the modal with the result
+            // Muestra el modal con el resultado
             document.getElementById("resultado-text").innerText = "Tu tipo de estudio es: " + resultado;
             document.getElementById("resultado-modal").style.display = "block";
             document.getElementById("overlay").style.display = "block";
@@ -43,11 +52,12 @@
         function cerrarModal() {
             document.getElementById("resultado-modal").style.display = "none";
             document.getElementById("overlay").style.display = "none";
+            window.location.href = paginaDestino; // Redirige al usuario según el resultado
         }
     </script>
 </head>
 <body>
-    <div style="max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+    <div style="max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px;box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); gap: 20px;">
         <h2>Formulario de Tipo de Aprendizaje</h2>
         <form onsubmit="event.preventDefault(); analizarResultados();">
             

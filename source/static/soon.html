@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Flashcards - Próximamente</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAF0E6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .message-container {
+            background: #E3C7A1;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-container h1 {
+            font-family: 'Playfair Display', serif;
+            color: #2F1E1E;
+            margin-bottom: 20px;
+        }
+
+        .message-container p {
+            font-size: 1.2em;
+            color: #5B6D60;
+        }
+
+        .top-bar, .bottom-bar {
+            width: 100%;
+            height: 8vh;
+            position: fixed;
+            background: #5B6D60;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .top-bar {
+            top: 0;
+        }
+
+        .bottom-bar {
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="project-name">Focus Unity</div>
+    </div>
+    <div class="message-container">
+        <h1>Implementaremos esta función próximamente, gracias por la comprensión ;)</h1>
+<button onclick="window.location.href='main.html'" style="margin-top: 20px; padding: 10px 20px; font-size: 1em; background-color: #5B6D60; color: white; border: none; border-radius: 5px; cursor: pointer;">Ir a la página principal</button>
+</body>
+</html>

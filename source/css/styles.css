@@ -214,3 +214,84 @@ body {
         height: 9%;
     }
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Contenedor del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FAF0E6; /* Beige Más Claro */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.modal h3 {
+    font-size: 20px;
+    color: #5B6D60; /* Verde Apagado */
+    margin-bottom: 20px;
+}
+
+/* Botón de Cerrar */
+.close-btn {
+    background-color: #A66A4D; /* Terracota Suave */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Inputs tipo radio */
+input[type="radio"] {
+    margin-right: 5px;
+    transform: scale(1.2);
+}
+
+/* Slider (rango) */
+input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+    cursor: pointer;
+}
