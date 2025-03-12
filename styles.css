@@ -1,198 +1,297 @@
-/* Importación de fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
-/* Configuración General */
-body {
+/* Estilos Generales */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Inter', sans-serif;
-    background: #E3C7A1; /* Beige claro */
-    font-size: clamp(14px, 1.2vw, 18px);
-}
-
-/* Barra Superior */
-.top-bar {
-    width: 90%;
-    height: 8vh;
-    position: fixed;
-    top: 0;
-    background: #5B6D60; /* Verde apagado */
+    background-color: #FAF0E6; /* Beige Más Claro */
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 5vw;
-    color: white;
+    height: 100vh;
 }
-.logo-container {
+
+/* Contenedor Principal */
+.container {
     display: flex;
-    align-items: center;
-    height: 100%;
-    width: 30%;
-    margin-left: -20px;
-    padding: 10px;
-}
-.logo-circle{
-    width: 30%;
+    width: 100%;
+    height: 100vh;
 }
 
-
-.project-name {
-    font-size: clamp(1.2em, 1.8vw, 2em);
-    font-family: 'Playfair Display', serif;
-    color: white;
-    margin-left: 1vw;
-    min-width: 70%;
-}
-
-/* Menú */
-.menu-item, .contact {
-    font-size: clamp(1em, 1.5vw, 1.2em);
-    font-weight: 400;
-    font-family: 'Inter', sans-serif;
-    color: white;
-    margin: 0 2vw;
-}
-
-/* Contenido Principal */
-.main-content {
+/* Sección de Imagen */
+.big-image-container {
+    width: 70%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
-    margin: 20vh auto;
-    gap: 5vw;
 }
 
-/* Título */
-.headline {
-    font-size: clamp(2em, 4vw, 5em);
-    font-family: 'Playfair Display', serif;
-    font-weight: bold;
-    color: #2F1E1E; /* Marrón oscuro para un toque académico */
-    margin-bottom: 1vh;
+.big-image-container img {
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
 }
 
-/* Descripción */
-.description {
-    font-size: clamp(1em, 1.5vw, 2em);
-    font-family: 'Inter', sans-serif;
-    color: #5B6D60; /* Verde apagado para suavidad y enfoque */
-    margin-bottom: 2vh;
+/* Sección de Registro */
+.register-container {
+    width: 30%;
+    height: 100vh;
+    padding: 20px;
+    background-color: #E3C7A1; /* Beige Claro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 95%;
+    background-color: #5B6D60; /* Verde Apagado */
+    padding: 5%;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+
+.input-field {
+    padding: 12px;
+    background-color: #FAF0E6; /* Beige Más Claro */
+    border: 2px solid #A66A4D;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
 }
 
 /* Botones */
-.button-container {
-    display: flex;
-    gap: 2vw;
-    margin-top: 2vh;
-}
-
-.button {
-    background: #A66A4D; /* Terracota suave para calidez y dinamismo */
-    border-radius: 10px;
-    padding: 1vh 2vw;
-    text-align: center;
-    font-size: clamp(0.9em, 1.2vw, 1.5em);
-    font-weight: 400;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-    border: none;
+.primary-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #A66A4D; /* Terracota Suave */
     color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.button:hover {
-    background: #8B5442;
+.primary-button:hover {
+    background-color: #8B5442; /* Terracota Oscuro */
 }
 
-/* Imagen dentro del Círculo */
-.image-circle {
-    width: 22vw;
-    height: 22vw;
-    background: #5B6D60; /* Verde apagado para un ambiente sereno */
-    border-radius: 50%;
+.secondary-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #D9D9D9; /* Gris Suave */
+    color: #2F1E1E; /* Marrón Oscuro */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FAF0E6; /* Beige Más Claro */
+    color: #2F1E1E; /* Marrón Oscuro */
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.image-circle img {
+.register-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Separador */
+.separator {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #D9D9D9;
+    line-height: 0.1em;
+    margin: 20px 0;
+}
+
+.separator span {
+    background: #E3C7A1; /* Beige Claro */
+    padding: 0 10px;
+    color: #2F1E1E; /* Marrón Oscuro */
+}
+
+/* Texto de Términos */
+.terms {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.terms a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* Foto de Perfil */
+.pfp-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pfp-container {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pfp-container img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: cover;
+    margin-bottom: 10px;
 }
 
-/* Barra Inferior */
-.bottom-bar {
-    width: 100%;
-    height: 8vh;
-    position: fixed;
-    bottom: 0;
-    background: #2F1E1E; /* Marrón oscuro para cohesión */
+.pfp-container i {
+    position: absolute;
+    bottom: 4px;
+    right: -7px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
     display: flex;
     align-items: center;
-    padding: 1vh;
-    justify-content: space-around;
-    color: white;
+    justify-content: center;
+    background-color: white;
 }
 
-.social-icons{
-    display: flex;
-    gap: 10px;
-}
-/* Iconos Sociales */
-.icon {
-    width: 1vw;
-    height: 1vw;
+.pfp-container i img {
+    height: 20px;
+    width: 20px;
 }
 
-/* 📱 RESPONSIVE DESIGN */
+/* Responsividad */
 @media (max-width: 1024px) {
-    .main-content {
+    .container {
         flex-direction: column;
-        text-align: center;
     }
-    .image-circle {
-        width: 40vw;
-        height: 40vw;
+    
+    .big-image-container {
+        display: none;
+    }
+    
+    .register-container {
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .form-container{
+        height: 9%;
     }
 }
 
-@media (max-width: 768px) {
-    .image-circle {
-        width: 50vw;
-        height: 50vw;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
     }
-    .bottom-bar {
-        height: 5%;
-    }
-
-    .social-icons{
-        display: flex;
-        gap: 1px;  
-    }
-
-    .icon{
-        width: 3vw;
-        height: 3vw;
-    }
-
-    .contact-text,
-    .prices,
-    .footer-text{
-        font-size: 0.4rem;
-    }
-    .button-container
-    {
-        display: flex;
-        flex-direction: row;
-        gap: 1vh;
-        justify-content: center;
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
     }
 }
 
-@media (max-width: 480px) {
-    .image-circle {
-        width: 60vw;
-        height: 60vw;
-    }
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Contenedor del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FAF0E6; /* Beige Más Claro */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.modal h3 {
+    font-size: 20px;
+    color: #5B6D60; /* Verde Apagado */
+    margin-bottom: 20px;
+}
+
+/* Botón de Cerrar */
+.close-btn {
+    background-color: #A66A4D; /* Terracota Suave */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Inputs tipo radio */
+input[type="radio"] {
+    margin-right: 5px;
+    transform: scale(1.2);
+}
+
+/* Slider (rango) */
+input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+    cursor: pointer;
 }
