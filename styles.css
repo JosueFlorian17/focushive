@@ -1,0 +1,198 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
+/* Configuración General */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #E3C7A1; /* Beige claro */
+    font-size: clamp(14px, 1.2vw, 18px);
+}
+
+/* Barra Superior */
+.top-bar {
+    width: 90%;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    background: #5B6D60; /* Verde apagado */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    color: white;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    margin-left: -20px;
+    padding: 10px;
+}
+.logo-circle{
+    width: 30%;
+}
+
+
+.project-name {
+    font-size: clamp(1.2em, 1.8vw, 2em);
+    font-family: 'Playfair Display', serif;
+    color: white;
+    margin-left: 1vw;
+    min-width: 70%;
+}
+
+/* Menú */
+.menu-item, .contact {
+    font-size: clamp(1em, 1.5vw, 1.2em);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    margin: 0 2vw;
+}
+
+/* Contenido Principal */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 20vh auto;
+    gap: 5vw;
+}
+
+/* Título */
+.headline {
+    font-size: clamp(2em, 4vw, 5em);
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #2F1E1E; /* Marrón oscuro para un toque académico */
+    margin-bottom: 1vh;
+}
+
+/* Descripción */
+.description {
+    font-size: clamp(1em, 1.5vw, 2em);
+    font-family: 'Inter', sans-serif;
+    color: #5B6D60; /* Verde apagado para suavidad y enfoque */
+    margin-bottom: 2vh;
+}
+
+/* Botones */
+.button-container {
+    display: flex;
+    gap: 2vw;
+    margin-top: 2vh;
+}
+
+.button {
+    background: #A66A4D; /* Terracota suave para calidez y dinamismo */
+    border-radius: 10px;
+    padding: 1vh 2vw;
+    text-align: center;
+    font-size: clamp(0.9em, 1.2vw, 1.5em);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.button:hover {
+    background: #8B5442;
+}
+
+/* Imagen dentro del Círculo */
+.image-circle {
+    width: 22vw;
+    height: 22vw;
+    background: #5B6D60; /* Verde apagado para un ambiente sereno */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Barra Inferior */
+.bottom-bar {
+    width: 100%;
+    height: 8vh;
+    position: fixed;
+    bottom: 0;
+    background: #2F1E1E; /* Marrón oscuro para cohesión */
+    display: flex;
+    align-items: center;
+    padding: 1vh;
+    justify-content: space-around;
+    color: white;
+}
+
+.social-icons{
+    display: flex;
+    gap: 10px;
+}
+/* Iconos Sociales */
+.icon {
+    width: 1vw;
+    height: 1vw;
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .image-circle {
+        width: 40vw;
+        height: 40vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-circle {
+        width: 50vw;
+        height: 50vw;
+    }
+    .bottom-bar {
+        height: 5%;
+    }
+
+    .social-icons{
+        display: flex;
+        gap: 1px;  
+    }
+
+    .icon{
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .contact-text,
+    .prices,
+    .footer-text{
+        font-size: 0.4rem;
+    }
+    .button-container
+    {
+        display: flex;
+        flex-direction: row;
+        gap: 1vh;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-circle {
+        width: 60vw;
+        height: 60vw;
+    }
+}
