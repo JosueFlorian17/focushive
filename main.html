@@ -4,7 +4,417 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseño de Figma</title>
-    <link rel="stylesheet" href="main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    background: #E3C7A1; /* Beige claro */
+}
+
+/* Barra Superior */
+.top-bar {
+    width: 100%;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    background: #5B6D60; /* Verde apagado */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    color: white;
+    font-size: clamp(14px, 1.2vw, 18px);
+}
+.return{
+    width: 40%;
+    height: 40%;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+    margin-left: -20px;
+}
+.logo-circle{
+    width: 30%;
+    padding: 10px;
+}
+
+.project-name {
+    font-size: clamp(1.2em, 1.8vw, 2em);
+    font-family: 'Playfair Display', serif;
+    color: white;
+    min-width: 70%;
+}
+
+/* Menú */
+.menu-item, .contact {
+    font-size: clamp(1em, 1.5vw, 1.2em);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    margin: 0 2vw;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FAF0E6; /* Beige Más Claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+}
+
+/* Contenedor Principal */
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Botón de Cerrar */
+.close-btn {
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    top: -25px;
+    right: -20px;
+    border-radius: 50%;
+    background: #D9D9D9;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+.image-container {
+    position: absolute;
+    width: 15%;
+    height: 30%;
+    border-radius: 10px;
+    left: 50px;
+    background: #E3C7A1; /* Beige Claro */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    min-height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+.image-container span{
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    color: #2F1E1E; /* Marrón Oscuro */
+}
+
+
+/* Tarjeta (Card) */
+.card {
+    background: #5B6D60; /* Verde Apagado */
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+    height: 60%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    right: 40vw;
+}
+
+.card-content {
+    background: #ffffff; /* Terracota Suave */
+    width: 100%;
+    height: 60%;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-content img {
+    width: 50%;
+    height: 50%;
+    border-radius: 5px;
+}
+
+/* Botones */
+.button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #969696; /* Terracota Suave */
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: #8B5442; /* Terracota Oscuro */
+}
+
+/* Motivational */
+.motivational {
+    position: absolute;
+    top: 10%;
+    right: 20px;
+    background: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 20%;
+    color: #2F1E1E; /* Marrón Oscuro */
+}
+
+.motivational p {
+    font-size: 14px;
+}
+
+/* Playlists */
+.playlists {
+    position: absolute;
+    bottom: 10%;
+    right: 20px;
+    background: #5B6D60; /* Verde Apagado */
+    padding: 10px;
+    border-radius: 5px;
+    width: 20%;
+}
+
+.playlists p {
+    color: white;
+    font-size: 100%;
+}
+.bottom-bar {
+    width: 100%;
+    height: 8vh;
+    position: fixed;
+    bottom: 0;
+    background: #2F1E1E; 
+    display: flex;
+    align-items: center;
+    padding: 1vh;
+    justify-content: space-around;
+    color: white;
+}
+
+.social-icons{
+    display: flex;
+    gap: 10px;
+}
+/* Iconos Sociales */
+.icon {
+    width: 1vw;
+    height: 1vw;
+}
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    body {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        width: 90%;
+        max-width: 600px;
+        padding: 20px;
+    }
+
+    .image-container {
+        position: relative; 
+        width: 100%;
+        max-width: 200px;
+        height: 200px;
+        text-align: center;
+        right: 0vw;
+        left: 0vw;
+        margin-top: 40%;
+        display: flex;
+        align-items: center;
+    }
+    .image-container img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .image-container span{
+        font-size: 0.8rem;
+        width: 300%;
+    }
+
+    .card {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+        right: 0vw;
+    }
+
+    .motivational{
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        margin-left: 12%;
+        top: 5px;
+    }
+    .playlists {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        margin-left: 12%;
+        top: 20px;
+        margin-bottom: 20%;
+    }
+    .motivational{
+        padding:20px;
+    }
+    .button {
+        font-size: 1.2rem;
+    }
+
+    .close-btn {
+        width: 10px;
+        height: 40px;
+    }
+    .top-bar{ 
+        height: 3%;
+        font-size: 0.65rem;
+        margin-bottom: 10px;
+    }
+
+    .bottom-bar {
+        height: 5%;
+    }
+
+    .social-icons{
+        display: flex;
+        gap: 1px;  
+    }
+
+    .icon{
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .contact-text,
+    .prices,
+    .footer-text{
+        font-size: 0.4rem;
+    }
+    
+}
+
+@media (min-width: 1024px) {
+    .button {
+        font-size: 1.4rem;
+        padding: 14px;
+    }
+}
+
+
+#clock_container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.clock-face {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+}
+
+.clock-center {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+}
+
+.clock-hand {
+    width: 10px;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    transform-origin: bottom;
+}
+
+#display {
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#startStop {
+    background-color: #6c757d;
+    color: white;
+}
+
+#reset {
+    background-color: #343a40;
+    color: white;
+}
+
+@keyframes secondsMotion {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+    </style>
 </head>
 <body>
     
@@ -68,7 +478,60 @@
         <img class="icon" src="twitter.svg" alt="icono4">
         </div>
     </div>
-    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const closeButtons = document.querySelectorAll(".close-btn");
+
+    closeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            button.parentElement.style.display = "none";
+        });
+    });
+
+    
+    const imageIds = [
+        "13LcPZrGKwGI6Bnnl0IOH2BLTPMrnUyPl",
+        "1D1rw3dtrbL-LVmhZTFTVhgqqMM3QOLDj",
+        "1s9PeBDT3y5r_lAVGNO_4c6ZlC8w7KnRr",  
+        "1D8H7g5HY0IIscv8LFx_f4HbEdr1_viA7"  
+    ];
+
+    const imageElement = document.getElementById("dynamic-image");
+    let index = 0;
+
+    function changeImage() {
+        imageElement.src = `https://drive.google.com/thumbnail?id=${imageIds[index]}`;
+        index = (index + 1) % imageIds.length; 
+    }
+
+    changeImage(); 
+    setInterval(changeImage, 1000); 
+});
+
+
+const frasesMotivadoras = [
+    "El esfuerzo de hoy es el éxito de mañana.",
+    "Cada página que lees te acerca a tu meta.",
+    "No estudies hasta que entiendas, estudia hasta que no puedas olvidar.",
+    "La disciplina es el puente entre metas y logros.",
+    "Pequeños progresos diarios suman grandes resultados.",
+    "Tu futuro se construye con lo que haces hoy, no mañana.",
+    "El conocimiento es poder, y tú tienes la llave.",
+    "Si fuera fácil, todos lo harían.",
+    "No se trata de ser el mejor, sino de ser mejor que ayer.",
+    "Persiste hasta que el estudio se convierta en tu hábito."
+];
+
+
+function actualizarFrases() {
+    const parrafos = document.querySelectorAll(".motivational p");
+    parrafos.forEach((p, index) => {
+        p.textContent = frasesMotivadoras[(index + Math.floor(Math.random() * frasesMotivadoras.length)) % frasesMotivadoras.length];
+    });
+}
+
+setInterval(actualizarFrases, 5000);
+    </script>
     <script>
         document.addEventListener("click", function () {
             let iframe = document.getElementById("youtube-video");
