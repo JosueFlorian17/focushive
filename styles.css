@@ -43,7 +43,7 @@ body {
     width: 30%;
     height: 100vh;
     padding: 20px;
-    background-color: #E3C7A1; /* Beige Claro */
+    background-cor: #E3C7A1; /* Beige Claro */
     display: flex;
     flex-direction: column;
     justify-content: center;
