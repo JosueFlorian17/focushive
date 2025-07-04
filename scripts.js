@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     changeImage(); 
-    setInterval(changeImage, 1000); 
+    setInterval(changeImage, 50000); 
 });
 
 

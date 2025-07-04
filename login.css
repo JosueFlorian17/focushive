@@ -37,9 +37,9 @@ body {
 .logo-circle {
     width: 100px;
     height: 100px;
-    background: #5B6D60; /* Verde apagado */
+    background: none;
     border-radius: 50%;
-    border: 3px solid #2F1E1E; /* Marrón oscuro */
+    border: 0px solid #2F1E1E; /* Marrón oscuro */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,7 +81,7 @@ body {
 
 /* Botón de Login */
 .login-button {
-    width: 100%;
+    width: 93%;
     padding: 1rem;
     background: #A66A4D; /* Terracota suave */
     border: none;
